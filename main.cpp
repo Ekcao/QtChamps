@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     view.setSource(QUrl("qrc:/main.qml"));
 
     QObject *item = view.rootObject();
-    QObject::connect(&riot, SIGNAL(noApiKey()), item, SLOT(sayHello()));
+    QObject::connect(&riot, SIGNAL(noApiKey()), item, SLOT(showInputDialog()));
     riot.getChampions();
 
     view.show();

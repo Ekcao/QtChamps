@@ -6,20 +6,17 @@ Dialog {
     id: inputDialog
     title: "Enter API key"
     visible: true
-    height: 100
-    width: 500
+    height: 80
+    width: 250
     standardButtons: StandardButton.Ok | StandardButton.Cancel
 
     onAccepted: {
         Riot.saveApiKey(textField.text)
-        Riot.hasApiKey();
+        Riot.getChampions();
     }
 
     TextField {
         id: textField
         width: inputDialog.width * 0.90
-        onAccepted: {
-            console.log("Hello 2")
-        }
     }
 }

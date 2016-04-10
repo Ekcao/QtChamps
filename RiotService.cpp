@@ -1,5 +1,6 @@
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QDir>
 #include <QNetworkRequest>
 #include <QDebug>
 #include <QByteArray>
@@ -62,8 +63,15 @@ void RiotService::parseChampsJson(QNetworkReply *reply) {
 }
 
 bool RiotService::hasApiKey() {
-    QSettings settings("Eric Cao", "League Champs");
-    apiKey = settings.value("API Key").toString();
+    if (!QFile(QDir::currentPath() + "/settings.ini").exists()) {
+        qDebug() << "File does not exist";
+        emit noApiKey();
+        return false;
+    }
+
+    QSettings settings(QDir::currentPath() + "/settings.ini", QSettings::IniFormat);
+
+    apiKey = settings.value("apiKey").toString();
 
     if (apiKey.isEmpty()) {
         qDebug() << "No API key";
@@ -77,6 +85,6 @@ bool RiotService::hasApiKey() {
 }
 
 void RiotService::saveApiKey(const QString &s) {
-    QSettings settings("Eric Cao", "League Champs");
-    settings.setValue("API Key", s);
+    QSettings settings(QDir::currentPath() + "/settings.ini", QSettings::IniFormat);
+    settings.setValue("apiKey", s);
 }

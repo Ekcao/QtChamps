@@ -6,8 +6,7 @@ Item {
     visible: true
     width: 600; height: 600
 
-    function sayHello() {
-        console.log("Hello")
+    function showInputDialog() {
         var component = Qt.createComponent("InputDialog.qml");
         if (component.status == Component.Ready) {
             var dialog = component.createObject(root);
