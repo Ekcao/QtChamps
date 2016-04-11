@@ -5,7 +5,6 @@
 #include <QUrl>
 #include <QString>
 #include <QStringList>
-#include <QList>
 #include <QMap>
 #include <QVariantList>
 #include <QNetworkAccessManager>

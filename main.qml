@@ -1,7 +1,8 @@
 import QtQuick 2.6
 import QtQuick.Window 2.2
+import QtQuick.Controls 1.4
 
-Item {
+ApplicationWindow {
     id: root
     visible: true
     width: 600; height: 600

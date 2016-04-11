@@ -5,7 +5,6 @@
 #include <QDebug>
 #include <QByteArray>
 #include <QFile>
-#include <QTextStream>
 #include <QSettings>
 
 
@@ -88,3 +87,5 @@ void RiotService::saveApiKey(const QString &s) {
     QSettings settings(QDir::currentPath() + "/settings.ini", QSettings::IniFormat);
     settings.setValue("apiKey", s);
 }
+
+#include "moc_RiotService.cpp"
