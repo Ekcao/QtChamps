@@ -4,6 +4,7 @@ import QtQuick.Controls 1.4
 
 ApplicationWindow {
     id: root
+    title: "League Champions"
     visible: true
     width: 600; height: 600
 
@@ -11,6 +12,21 @@ ApplicationWindow {
         var component = Qt.createComponent("InputDialog.qml");
         if (component.status == Component.Ready) {
             var dialog = component.createObject(root);
+        }
+    }
+
+    menuBar: MenuBar {
+        Menu {
+            title: "File"
+            MenuItem {
+                text: "Quit"
+                onTriggered: Qt.quit()
+            }
+        }
+
+        Menu {
+            title: "About"
+            MenuItem { text: "Patch " + Riot.version }
         }
     }
 
