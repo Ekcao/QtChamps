@@ -35,13 +35,23 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Distribution Files">
+      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
+      <Extensions>*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Distribution Files">
+      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
+      <Extensions>*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{3719fb72-4f24-4fae-9a14-b3bb0e4cc764}</UniqueIdentifier>
+      <UniqueIdentifier>{afdc3c7c-38e3-469a-a26a-5204476acf79}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{e34e96bb-b425-4ed5-afb7-f178cf0f127f}</UniqueIdentifier>
+      <UniqueIdentifier>{05085622-f10c-4fc3-9041-0c67657be7be}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
@@ -69,7 +79,13 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Champion.qml">
+    <None Include="ChampionSquare.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ChampionWindow.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="InputDialog.qml">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="main.qml">
@@ -78,5 +94,10 @@
     <CustomBuild Include="qml.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore">
+      <Filter>Distribution Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

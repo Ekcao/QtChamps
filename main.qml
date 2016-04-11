@@ -10,7 +10,7 @@ ApplicationWindow {
 
     function showInputDialog() {
         var component = Qt.createComponent("InputDialog.qml");
-        if (component.status == Component.Ready) {
+        if (component.status === Component.Ready) {
             var dialog = component.createObject(root);
         }
     }
@@ -38,7 +38,7 @@ ApplicationWindow {
         cellWidth: (root.width - anchors.margins * 2) / 5
         cellHeight: (root.height - anchors.margins * 2) / 5
         model: Riot.champs
-        delegate: Champion {
+        delegate: ChampionSquare {
             width: grid.cellWidth; height: grid.cellHeight
         }
     }

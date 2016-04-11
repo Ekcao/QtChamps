@@ -11,10 +11,10 @@
 #include "RiotService.h"
 
 RiotService::RiotService(QObject *parent) :
-    QObject(parent)
-{
+    QObject(parent) {
     urlMap["base"] = "https://na.api.pvp.net/api/lol";
     urlMap["dataDragonPortrait"] = "http://ddragon.leagueoflegends.com/cdn/6.7.1/img/champion/";
+    urlMap["dataDragonSpell"] = "http://ddragon.leagueoflegends.com/cdn/6.7.1/img/spell/";
     urlMap["staticData"] = "/static-data/na/v1.2/champion";
 
     connect(&manager,
@@ -28,9 +28,9 @@ void RiotService::getChampions() {
     }
 
     QString url = urlMap["base"]
-            .append(urlMap["staticData"]).append("?")
-            .append("champData=image,passive,spells")
-            .append("&api_key=").append(apiKey);
+        .append(urlMap["staticData"]).append("?")
+        .append("champData=image,passive,spells")
+        .append("&api_key=").append(apiKey);
 
     QUrl qurl(url);
     QNetworkRequest request(qurl);
@@ -87,5 +87,3 @@ void RiotService::saveApiKey(const QString &s) {
     QSettings settings(QDir::currentPath() + "/settings.ini", QSettings::IniFormat);
     settings.setValue("apiKey", s);
 }
-
-#include "moc_RiotService.cpp"
