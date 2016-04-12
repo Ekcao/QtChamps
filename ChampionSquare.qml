@@ -1,7 +1,9 @@
-import QtQuick 2.0
+import QtQuick 2.6
 
-Item {
+Rectangle {
     id: champRoot
+    border.color: "grey"
+    border.width: 1
 
     Image {
         id: square
@@ -17,6 +19,7 @@ Item {
         id: name
         text: modelData.name
         width: champRoot.width;
+        bottomPadding: 10
         horizontalAlignment: Text.AlignHCenter
         anchors.top: square.bottom
         color: "black"

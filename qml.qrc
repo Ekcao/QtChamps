@@ -4,5 +4,6 @@
         <file>InputDialog.qml</file>
         <file>ChampionSquare.qml</file>
         <file>ChampionWindow.qml</file>
+        <file>Ability.qml</file>
     </qresource>
 </RCC>
