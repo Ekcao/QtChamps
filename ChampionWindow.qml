@@ -4,14 +4,11 @@ import QtQuick.Window 2.2
 Window {
     id: champion
 
-    ListModel {
-        id: listModel
-    }
-
     property var champModel
     width: 600; height: 600
 
     Rectangle {
+        id: mainInfo
         anchors.fill: parent
         anchors.margins: 10
 
@@ -39,15 +36,12 @@ Window {
 
         ListView {
             anchors.top: portrait.bottom
-            width: 200; height: 200
+            anchors.topMargin: 20
+            width: mainInfo.width;
+            height: mainInfo.height - portrait.height
             model: champModel.spells
-            delegate: Image {
-                source: Riot.dataDragonSpell + modelData.image.full
-            }
-
-
+            delegate: Ability { }
+            spacing: 10
         }
     }
-
-
 }
