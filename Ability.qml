@@ -8,7 +8,7 @@ Rectangle {
     border.color: "grey"
     border.width: 1
 
-    width: parent.width; height: 200
+    width: parent.width; height: 150
 
     Image {
         id: abilitySquare
@@ -43,7 +43,7 @@ Rectangle {
         id: abilityCostValue
         anchors.left: abilityCost.right
         anchors.top: abilityCost.top
-        text: modelData.resource
+        text: getCost()
         font.pixelSize: 14
     }
 
@@ -88,7 +88,11 @@ Rectangle {
         anchors.right: ability.right
         anchors.top: abilityKey.bottom
         anchors.rightMargin: 8
-        text: modelData.cooldownBurn
+        text: modelData.cooldownBurn + " sec"
         font.pixelSize: 14
+    }
+
+    function getCost() {
+        return modelData.resource.replace("{{ cost }}", modelData.costBurn);
     }
 }
