@@ -3,14 +3,13 @@ import QtQuick.Window 2.2
 
 Window {
     id: champion
-
     property var champModel
-    width: 600; height: 600
+    width: mainInfo.width + 16; height: mainInfo.height + 16
 
     Rectangle {
         id: mainInfo
-        anchors.fill: parent
-        anchors.margins: 10
+        anchors.centerIn: parent
+        width: childrenRect.width; height: childrenRect.height
 
         Image {
             id: portrait
@@ -21,9 +20,10 @@ Window {
         Text {
             id: name
             anchors.left: portrait.right
-            anchors.leftMargin: 10
+            anchors.leftMargin: 8
             text: champModel.name
-            font.pixelSize: 20
+            font.pixelSize: 24
+            font.bold: true
         }
 
         Text {
@@ -31,17 +31,18 @@ Window {
             anchors.left: name.left
             anchors.top: name.bottom
             text: champModel.title
-            font.pixelSize: 12
+            font.pixelSize: 14
         }
 
         ListView {
             anchors.top: portrait.bottom
-            anchors.topMargin: 20
-            width: mainInfo.width;
-            height: mainInfo.height - portrait.height
+            anchors.topMargin: 16
+            boundsBehavior: Flickable.StopAtBounds
+            width: 600
+            height: childrenRect.height
             model: champModel.spells
             delegate: Ability { }
-            spacing: 10
+            spacing: 8
         }
     }
 }

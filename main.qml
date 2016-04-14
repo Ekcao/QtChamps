@@ -34,7 +34,7 @@ ApplicationWindow {
         anchors.fill: parent
         id: grid
         boundsBehavior: Flickable.StopAtBounds
-        anchors.margins: 10
+        anchors.margins: 8
         cellWidth: (root.width - anchors.margins * 2) / 5
         cellHeight: (root.height - anchors.margins * 2) / 5
         model: Riot.champs

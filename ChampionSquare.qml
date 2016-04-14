@@ -10,7 +10,6 @@ Rectangle {
         anchors.centerIn: champRoot
         width: champRoot.width - name.height - 10; height: width
         anchors.horizontalCenter: champRoot.horizontalCenter
-        fillMode: Image.PreserveAspectFit
         clip: true
         source: Riot.dataDragonPortrait + modelData.image.full
     }
@@ -19,7 +18,7 @@ Rectangle {
         id: name
         text: modelData.name
         width: champRoot.width;
-        bottomPadding: 10
+        bottomPadding: 8
         horizontalAlignment: Text.AlignHCenter
         anchors.top: square.bottom
         color: "black"
