@@ -15,6 +15,7 @@ class RiotService : public QObject {
 
     Q_PROPERTY(QString version MEMBER version NOTIFY versionChanged)
     Q_PROPERTY(QString dataDragonPortrait READ dataDragonPortrait CONSTANT)
+    Q_PROPERTY(QString dataDragonPassive READ dataDragonPassive CONSTANT)
     Q_PROPERTY(QString dataDragonSpell READ dataDragonSpell CONSTANT)
     Q_PROPERTY(QVariantList champs MEMBER champs NOTIFY champsChanged)
 
@@ -32,6 +33,10 @@ public:
 
     QString dataDragonPortrait() const {
         return urlMap["dataDragonPortrait"];
+    }
+
+    QString dataDragonPassive() const {
+        return urlMap["dataDragonPassive"];
     }
 
     QString dataDragonSpell() const {

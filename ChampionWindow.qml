@@ -34,7 +34,10 @@ Window {
             font.pixelSize: 14
         }
 
+        // Passive goes here
+
         ListView {
+            id: list
             anchors.top: portrait.bottom
             anchors.topMargin: 16
             boundsBehavior: Flickable.StopAtBounds

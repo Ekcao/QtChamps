@@ -13,8 +13,10 @@
 RiotService::RiotService(QObject *parent) :
     QObject(parent) {
     urlMap["base"] = "https://na.api.pvp.net/api/lol";
-    urlMap["dataDragonPortrait"] = "http://ddragon.leagueoflegends.com/cdn/6.7.1/img/champion/";
-    urlMap["dataDragonSpell"] = "http://ddragon.leagueoflegends.com/cdn/6.7.1/img/spell/";
+    urlMap["dataDragonImg"] = "http://ddragon.leagueoflegends.com/cdn/6.7.1/img/";
+    urlMap["dataDragonPortrait"] = urlMap["dataDragonImg"] + "champion/";
+    urlMap["dataDragonPassive"] = urlMap["dataDragonImg"] + "passive/";
+    urlMap["dataDragonSpell"] = urlMap["dataDragonImg"] + "spell/";
     urlMap["staticData"] = "/static-data/na/v1.2/champion";
 
     connect(&manager,

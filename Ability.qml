@@ -8,7 +8,7 @@ Rectangle {
     border.color: "grey"
     border.width: 1
 
-    width: parent.width; height: 150
+    width: parent.width; height: 100
 
     Image {
         id: abilitySquare
