@@ -43,7 +43,7 @@ Rectangle {
         id: abilityCostValue
         anchors.left: abilityCost.right
         anchors.top: abilityCost.top
-        text: getCost()
+        text: getCostVal()
         font.pixelSize: 14
     }
 
@@ -92,7 +92,16 @@ Rectangle {
         font.pixelSize: 14
     }
 
-    function getCost() {
+    function getCostVal() {
+        // Can also use effect vars
         return modelData.resource.replace("{{ cost }}", modelData.costBurn);
+    }
+
+    function getEffectVal() {
+        // Effect/effect burn vars
+    }
+
+    function getCoeffVal() {
+        // {{ aX }} and {{ fX }} vars
     }
 }
