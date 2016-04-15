@@ -4,11 +4,10 @@ import QtQuick.Window 2.2
 Window {
     id: champion
     property var champModel
-    maximumHeight: 800
-    width: mainInfo.width + 16; height: mainInfo.height + 16
+    width: champContent.width + 16; height: champContent.height + 16
 
     Rectangle {
-        id: mainInfo
+        id: champContent
         anchors.centerIn: parent
         width: childrenRect.width; height: childrenRect.height
 
@@ -19,7 +18,7 @@ Window {
         }
 
         Text {
-            id: name
+            id: champName
             anchors.left: portrait.right
             anchors.leftMargin: 8
             text: champModel.name
@@ -28,9 +27,9 @@ Window {
         }
 
         Text {
-            id: title
-            anchors.left: name.left
-            anchors.top: name.bottom
+            id: champTitle
+            anchors.left: champName.left
+            anchors.top: champName.bottom
             text: champModel.title
             font.pixelSize: 14
         }
@@ -71,7 +70,7 @@ Window {
                 anchors.topMargin: 8
                 width: passive.width; height: contentHeight
                 wrapMode: Text.WordWrap
-                text: champModel.passive.sanitizedDescription
+                text: champModel.passive.description
                 font.pixelSize: 12
             }
 
@@ -92,7 +91,8 @@ Window {
             anchors.topMargin: 8
             boundsBehavior: Flickable.StopAtBounds
             width: 600
-            height: childrenRect.height
+            height: 600
+            clip: true
             model: champModel.spells
             delegate: Ability { }
             spacing: 8

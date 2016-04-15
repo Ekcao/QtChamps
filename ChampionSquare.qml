@@ -1,26 +1,26 @@
 import QtQuick 2.6
 
 Rectangle {
-    id: champRoot
+    id: champSquare
     border.color: "grey"
     border.width: 1
 
     Image {
-        id: square
-        anchors.centerIn: champRoot
-        width: champRoot.width - name.height - 10; height: width
-        anchors.horizontalCenter: champRoot.horizontalCenter
+        id: champSquareImage
+        anchors.centerIn: champSquare
+        width: champSquare.width - champName.height - 10; height: width
+        anchors.horizontalCenter: champSquare.horizontalCenter
         clip: true
         source: Riot.dataDragonPortrait + modelData.image.full
     }
 
     Text {
-        id: name
+        id: champName
         text: modelData.name
-        width: champRoot.width;
+        width: champSquare.width;
         bottomPadding: 8
         horizontalAlignment: Text.AlignHCenter
-        anchors.top: square.bottom
+        anchors.top: champSquareImage.bottom
         color: "black"
     }
 
@@ -28,7 +28,7 @@ Rectangle {
         id: click
         anchors.fill: parent
         onClicked: {
-            console.log(modelData.name);
+            console.log(modelData.id + " " + modelData.name);
             var component = Qt.createComponent("ChampionWindow.qml");
             if (component.status === Component.Ready) {
                 var window = component.createObject(root, {"champModel": modelData});

@@ -8,7 +8,7 @@ Rectangle {
     border.color: "grey"
     border.width: 1
 
-    width: parent.width; height: 100
+    width: parent.width; height: childrenRect.height + 16
 
     Image {
         id: abilitySquare
@@ -90,6 +90,30 @@ Rectangle {
         anchors.top: abilityCost.bottom
         anchors.rightMargin: 8
         text: modelData.cooldownBurn + " sec"
+        font.pixelSize: 12
+    }
+
+    Text {
+        id: abilityDescription
+        anchors.left: abilitySquare.left
+        anchors.right: abilityKey.right
+        anchors.top: abilitySquare.bottom
+        anchors.topMargin: 8
+        width: ability.width; height: contentHeight
+        wrapMode: Text.WordWrap
+        text: modelData.description
+        font.pixelSize: 12
+    }
+
+    Text {
+        id: abilityTooltip
+        anchors.left: abilityDescription.left
+        anchors.right: abilityDescription.right
+        anchors.top: abilityDescription.bottom
+        anchors.topMargin: 8
+        width: ability.width; height: contentHeight
+        wrapMode: Text.WordWrap
+        text: modelData.tooltip
         font.pixelSize: 12
     }
 
