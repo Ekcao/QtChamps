@@ -26,7 +26,7 @@ Rectangle {
         anchors.top: abilitySquare.top
         anchors.leftMargin: 8
         text: modelData.name
-        font.pixelSize: 18
+        font.pixelSize: 16
         font.bold: true
     }
 
@@ -35,7 +35,7 @@ Rectangle {
         anchors.left: abilityName.left
         anchors.top: abilityName.bottom
         text: "Cost: "
-        font.pixelSize: 14
+        font.pixelSize: 12
         font.bold: true
     }
 
@@ -44,15 +44,15 @@ Rectangle {
         anchors.left: abilityCost.right
         anchors.top: abilityCost.top
         text: getCostVal()
-        font.pixelSize: 14
+        font.pixelSize: 12
     }
 
     Text {
         id: abilityRange
-        anchors.left: abilityCost.left
-        anchors.top: abilityCost.bottom
+        anchors.left: abilityCooldown.left
+        anchors.top: abilityCooldown.bottom
         text: "Range: "
-        font.pixelSize: 14
+        font.pixelSize: 12
         font.bold: true
     }
 
@@ -60,8 +60,9 @@ Rectangle {
         id: abilityRangeValue
         anchors.left: abilityRange.right
         anchors.top: abilityRange.top
+        anchors.rightMargin: 8
         text: modelData.rangeBurn
-        font.pixelSize: 14
+        font.pixelSize: 12
     }
 
     Text {
@@ -70,26 +71,26 @@ Rectangle {
         anchors.top: ability.top
         anchors.margins: 8
         text: "[" + abilityKeys[index] + "]"
-        font.pixelSize: 18
+        font.pixelSize: 16
         font.bold: true
     }
 
     Text {
         id: abilityCooldown
-        anchors.right: abilityCooldownValue.left
-        anchors.top: abilityKey.bottom
+        anchors.left: abilityCost.left
+        anchors.top: abilityCost.bottom
         text: "Cooldown: "
-        font.pixelSize: 14
+        font.pixelSize: 12
         font.bold: true
     }
 
     Text {
         id: abilityCooldownValue
-        anchors.right: ability.right
-        anchors.top: abilityKey.bottom
+        anchors.left: abilityCooldown.right
+        anchors.top: abilityCost.bottom
         anchors.rightMargin: 8
         text: modelData.cooldownBurn + " sec"
-        font.pixelSize: 14
+        font.pixelSize: 12
     }
 
     function getCostVal() {
