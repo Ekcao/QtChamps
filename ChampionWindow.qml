@@ -103,7 +103,6 @@ Window {
         var champs = champion.champModel;
         var i;
         for (i in champs.spells) {
-            champs.spells[i].resource = replaceCost(champs.spells[i]);
             champs.spells[i] = replaceInTooltip(champs.spells[i]);
         }
 
@@ -118,6 +117,9 @@ Window {
 
     function replaceInTooltip(spell) {
         var newSpell = spell;
+
+        newSpell.resource = replaceCost(newSpell);
+
         var effectBurn = spell.effectBurn;
         var i;
         for (i = 1; i < effectBurn.length; i++) {
@@ -128,7 +130,7 @@ Window {
             }
 
             if (newSpell.tooltip.indexOf(effectNum) !== 1) {
-                newSpell.tooltip = newSpell.tooltip.replace(effectNum, effectBurn[i]);
+                newSpell.tooltip = newSpell.tooltip.split(effectNum).join(effectBurn[i]);
             }
         }
 
