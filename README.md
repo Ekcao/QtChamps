@@ -22,3 +22,7 @@ Requires a Riot Games API key from [here](https://developer.riotgames.com/).
 - [ ] Animations
 - [ ] Transitions
 - [ ] Command-line option to display specific champion instead of all in a grid
+
+## Current Screenshots
+![Champion Grid](http://i.imgur.com/IlLE7al.png)
+![Champion Window](http://i.imgur.com/8r8cY3P.png)
