@@ -43,7 +43,7 @@ Rectangle {
         id: abilityCostValue
         anchors.left: abilityCost.right
         anchors.top: abilityCost.top
-        text: getCostVal()
+        text: modelData.resource
         font.pixelSize: 12
     }
 

@@ -98,4 +98,40 @@ Window {
             spacing: 8
         }
     }
+
+    Component.onCompleted: {
+        var champs = champion.champModel;
+        var i;
+        for (i in champs.spells) {
+            champs.spells[i].resource = replaceCost(champs.spells[i]);
+            champs.spells[i] = replaceInTooltip(champs.spells[i]);
+        }
+
+        champion.champModel = champs;
+    }
+
+    function replaceCost(spell) {
+        if (spell.resource.indexOf('{{ cost }}') !== 1) {
+            return spell.resource.replace('{{ cost }}', spell.costBurn);
+        }
+    }
+
+    function replaceInTooltip(spell) {
+        var newSpell = spell;
+        var effectBurn = spell.effectBurn;
+        var i;
+        for (i = 1; i < effectBurn.length; i++) {
+            var effectNum = "{{ e" + i + " }}";
+
+            if (newSpell.resource.indexOf(effectNum) !== 1) {
+                newSpell.resource = newSpell.resource.replace(effectNum, effectBurn[i]);
+            }
+
+            if (newSpell.tooltip.indexOf(effectNum) !== 1) {
+                newSpell.tooltip = newSpell.tooltip.replace(effectNum, effectBurn[i]);
+            }
+        }
+
+        return newSpell;
+    }
 }
